@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <img id="fondo" src="https://thumbs.dreamstime.com/z/concepto-de-equipo-programaci%C3%B3n-la-colaboraci%C3%B3n-para-el-desarrollo-web-negocios-j%C3%B3venes-hombres-mujeres-secretarias-gerentes-186676710.jpg" />
+    <div class="container-title">
+        <h1 id="title">Survey Form</h1>
+        <p id="description">Thanks for visiting our web page.</p>
+    </div>
+    <div class="container">
+            <form id="survey-form">
+            <div class="div-name">
+                <label id="name-label" for="name">Name*<input required type="text" id="name" placeholder="Enter your name"></label>
+            </div>
+            <div class="div-email">
+                <label id="email-label" for="email">Email*<input required type="email" id="email" placeholder="Enter your email"></label>
+            </div>
+            <div class="div-age">
+                <label id="number-label" for="number">Age(optional)<input type="number" id="number" min="13" max="117" placeholder="Age"></label>
+            </div>
+            <div class="div-options">   
+                <label id="options-label" for="dropdown">Which option best represents you?
+                <select id="dropdown">
+                <option value="select_an_option">Select an option</option>
+                <option value="student">Student</option>
+                <option value="employee">Employee</option>
+                <option value="both">Both</option>
+                <option value="none">None</option>
+                </select></label>
+            </div>
+            <div class="div-radio">
+                <legend>Would you recomend this form to a friend?</legend>
+                <label id="radio-label" for="radio-one"><input type="radio" name="radio" id="radio-one radio" value="r1" checked/>Yes</label>
+                <label id="radio-label" for="radio-two"><input type="radio" name="radio" id="radio-two" value="r2" />No</label>
+                <label id="radio-label" for="radio-three"><input type="radio" name="radio" id="radio-three" value="r3" />Maybe</label>
+            </div>
+            <div class="div-checkbox">
+                <legend>Select a recomendation for us</legend>
+                <label id="checkbox-label"><input type="checkbox" name="checkbox-one" value="ch1"/>Style</label>
+                <label id="checkbox-label"><input type="checkbox" name="checkbox-two" value="ch2"/>Optimization</label>
+                <label id="checkbox-label"><input type="checkbox" name="checkbox-three" value="ch3"/>Innovation</label>
+                <label id="checkbox-label"><input type="checkbox" name="checkbox-four" value="ch4"/>Create a forum</label>
+            </div>
+            <div class="div-coments">
+                <legend>Let us know your opinion!</legend>
+                <textarea></textarea>
+                <input type="submit" id="submit" value="Submit"/>           
+            </div>
+            </form>    
+    </div>
+</body>
+</html>
