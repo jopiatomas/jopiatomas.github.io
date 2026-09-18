@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Tomás Jopia
 
-## Getting Started
+Portfolio personal construido con Next.js (App Router) + TypeScript + Tailwind CSS, exportado como sitio estático para GitHub Pages.
 
-First, run the development server:
+## Correr en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrí [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build estático
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Genera el sitio estático en la carpeta `out/`. Podés previsualizarlo con:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx serve out
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy en GitHub Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El repo incluye `.github/workflows/deploy.yml`, que en cada push a `main` buildea el proyecto y lo publica automáticamente en GitHub Pages.
 
-## Deploy on Vercel
+Pasos para habilitarlo en GitHub (una sola vez):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Subí este proyecto al repositorio `jopiatomas/jopiatomas.github.io` en la rama `main`.
+2. En GitHub, andá a **Settings → Pages**.
+3. En **Build and deployment → Source**, elegí **GitHub Actions** (no "Deploy from a branch").
+4. Hacé push a `main` — el workflow "Deploy to GitHub Pages" se dispara solo y publica el sitio en `https://jopiatomas.github.io`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No hace falta configurar `basePath` porque este repo es un *user site* (`<usuario>.github.io`), que se sirve desde la raíz del dominio.
+
+## Editar contenido
+
+Todo el contenido real (nombre, bio, stack, proyectos, contacto) vive en un único archivo: `src/data/site.ts`. Para actualizar cualquier dato del portfolio, editá ese archivo — no hace falta tocar los componentes.
